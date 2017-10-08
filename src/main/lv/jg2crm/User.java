@@ -7,6 +7,14 @@ public class User {
     private String realname;
     private String role;
 
+    public User(int id, String login, String password, String realname, String role) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.realname = realname;
+        this.role = role;
+    }
+
     public int getId() {
         return id;
     }
@@ -75,7 +83,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", login='" + login + '\'' +
+                ", username='" + login + '\'' +
                 ", realname='" + realname + '\'' +
                 ", role='" + role + '\'' +
                 '}';

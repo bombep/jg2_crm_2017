@@ -6,7 +6,7 @@ create database CRM;
 use CRM;
 create table CRMusers(
     id int NOT NULL AUTO_INCREMENT,
-    login varchar(50), realname varchar (100), role varchar(50), password varchar(50), PRIMARY KEY (id)
+    username varchar(50), realname varchar (100), role varchar(50), password varchar(50), PRIMARY KEY (id)
 );
 
 create table CRMcustomers(
@@ -57,10 +57,25 @@ filereceived    file name
  */
 
 
+import lv.jg2crm.CustomerDB.CustomerDB;
+import lv.jg2crm.UI.LoginScreen;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainCRM {
 
     public static void main (String[] args){
+
+        CustomerDB customerDB = new CustomerDB();
+        Customer customer1 = new Customer(1,"Vlad", "12345", "Vladislav", "Selfemployee", 26333315);
+        Customer customer2 = new Customer(2,"Aleks", "12345", "Aleksej","Selfemployee", 2222222);
+        customerDB.addCustomer(customer1);
+        customerDB.addCustomer(customer2);
+        customerDB.print();
+        customerDB.delCustomer(customer2);
+        customerDB.print();
+
 
 
     }
