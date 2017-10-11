@@ -6,7 +6,7 @@ create database CRM;
 use CRM;
 create table CRMusers(
     id int NOT NULL AUTO_INCREMENT,
-    login varchar(50), realname varchar (100), role varchar(50), password varchar(50), PRIMARY KEY (id)
+    username varchar(50), realname varchar (100), role varchar(50), password varchar(50), PRIMARY KEY (id)
 );
 
 create table CRMcustomers(
@@ -58,10 +58,16 @@ url             http://link
  */
 
 
+import lv.jg2crm.database.CustomerDB;
+import lv.jg2crm.database.LocalUserDB;
+import lv.jg2crm.domain.Customer;
+import lv.jg2crm.domain.LocalUser;
 
 public class MainCRM {
 
     public static void main (String[] args){
+
+
 
 
     }
