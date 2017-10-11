@@ -1,21 +1,21 @@
-package lv.jg2crm.UI;
+package lv.jg2crm.ui;
 
 import java.util.Scanner;
 
 public class LoginScreen {
-    static String username;
-    static String password;
-    public static void print () {
+    private String username;
+    private String password;
+    public void print () {
         System.out.println("Enter username/password");
     }
 
-    static public String getUsername(){
+    public String getUsername(){
         return username = getStringFromUser();
     }
-    static public String getPassword(){
+    public String getPassword(){
         return password = getStringFromUser();
     }
-    static String getStringFromUser (){
+    private String getStringFromUser (){
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }

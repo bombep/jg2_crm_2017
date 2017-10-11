@@ -1,13 +1,13 @@
-package lv.jg2crm;
+package lv.jg2crm.domain;
 
 
 public class Customer {
-    int id;
+    Integer id;
     String username;
     String password;
     String realname;
     String company;
-    int phone;
+    Integer phone;
     /* Не знаю какой тип данных должен быть у даты.
     По идеи нужно для переменной creationdate, ставить системное время на момент создания клиента */
 

@@ -57,25 +57,16 @@ filereceived    file name
  */
 
 
-import lv.jg2crm.CustomerDB.CustomerDB;
-import lv.jg2crm.UI.LoginScreen;
-
-import java.util.ArrayList;
-import java.util.List;
+import lv.jg2crm.database.CustomerDB;
+import lv.jg2crm.database.LocalUserDB;
+import lv.jg2crm.domain.Customer;
+import lv.jg2crm.domain.LocalUser;
 
 public class MainCRM {
 
     public static void main (String[] args){
 
-        CustomerDB customerDB = new CustomerDB();
-        Customer customer1 = new Customer(1,"Vlad", "12345", "Vladislav", "Selfemployee", 26333315);
-        Customer customer2 = new Customer(2,"Aleks", "12345", "Aleksej","Selfemployee", 2222222);
-        customerDB.addCustomer(customer1);
-        customerDB.addCustomer(customer2);
-        customerDB.print();
-        customerDB.delCustomer(customer2);
-        customerDB.print();
-
+        
 
 
     }

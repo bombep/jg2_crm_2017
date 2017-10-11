@@ -1,13 +1,13 @@
-package lv.jg2crm;
+package lv.jg2crm.domain;
 
-public class User {
+public class LocalUser {
     private int id;
     private String login;
     private String password;
     private String realname;
     private String role;
 
-    public User(int id, String login, String password, String realname, String role) {
+    public LocalUser(int id, String login, String password, String realname, String role) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -60,13 +60,13 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        User user = (User) o;
+        LocalUser localUser = (LocalUser) o;
 
-        if (id != user.id) return false;
-        if (!login.equals(user.login)) return false;
-        if (!password.equals(user.password)) return false;
-        if (!realname.equals(user.realname)) return false;
-        return role.equals(user.role);
+        if (id != localUser.id) return false;
+        if (!login.equals(localUser.login)) return false;
+        if (!password.equals(localUser.password)) return false;
+        if (!realname.equals(localUser.realname)) return false;
+        return role.equals(localUser.role);
     }
 
     @Override
@@ -81,7 +81,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "LocalUser{" +
                 "id=" + id +
                 ", username='" + login + '\'' +
                 ", realname='" + realname + '\'' +
