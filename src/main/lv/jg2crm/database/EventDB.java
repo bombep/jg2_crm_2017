@@ -4,17 +4,11 @@ import lv.jg2crm.domain.Event;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class EventDB implements Database {
-    List<Event> eventList = new ArrayList<>();
+public interface EventDB {
 
-    @Override
-    public void add() {
+    void add(Event event);
 
-    }
-
-    @Override
-    public void remove() {
-
-    }
+    boolean removedById(Integer id);
 }

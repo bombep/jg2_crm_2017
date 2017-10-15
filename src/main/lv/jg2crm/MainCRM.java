@@ -57,11 +57,6 @@ filereceived    file name
  */
 
 
-import lv.jg2crm.database.CustomerDB;
-import lv.jg2crm.database.LocalUserDB;
-import lv.jg2crm.domain.Customer;
-import lv.jg2crm.domain.LocalUser;
-
 public class MainCRM {
 
     public static void main (String[] args){

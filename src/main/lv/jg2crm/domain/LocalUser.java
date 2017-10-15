@@ -1,34 +1,34 @@
 package lv.jg2crm.domain;
 
 public class LocalUser {
-    private int id;
-    private String login;
+    private Integer id;
+    private String username;
     private String password;
     private String realname;
     private String role;
 
-    public LocalUser(int id, String login, String password, String realname, String role) {
+    public LocalUser(Integer id, String login, String password, String realname, String role) {
         this.id = id;
-        this.login = login;
+        this.username = login;
         this.password = password;
         this.realname = realname;
         this.role = role;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -62,8 +62,8 @@ public class LocalUser {
 
         LocalUser localUser = (LocalUser) o;
 
-        if (id != localUser.id) return false;
-        if (!login.equals(localUser.login)) return false;
+        if (!id.equals(localUser.id)) return false;
+        if (!username.equals(localUser.username)) return false;
         if (!password.equals(localUser.password)) return false;
         if (!realname.equals(localUser.realname)) return false;
         return role.equals(localUser.role);
@@ -71,21 +71,11 @@ public class LocalUser {
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + login.hashCode();
+        int result = id.hashCode();
+        result = 31 * result + username.hashCode();
         result = 31 * result + password.hashCode();
         result = 31 * result + realname.hashCode();
         result = 31 * result + role.hashCode();
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "LocalUser{" +
-                "id=" + id +
-                ", username='" + login + '\'' +
-                ", realname='" + realname + '\'' +
-                ", role='" + role + '\'' +
-                '}';
     }
 }
