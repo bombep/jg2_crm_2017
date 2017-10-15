@@ -1,9 +1,9 @@
 package lv.jg2crm.domain;
 
 public class Event {
-    int id;
-    int userId;
-    int custId;
+    Integer id;
+    Integer userId;
+    Integer custId;
     String eventType;
 
     @Override
@@ -23,43 +23,43 @@ public class Event {
 
         Event event = (Event) o;
 
-        if (id != event.id) return false;
-        if (userId != event.userId) return false;
-        if (custId != event.custId) return false;
+        if (!id.equals(event.id)) return false;
+        if (!userId.equals(event.userId)) return false;
+        if (!custId.equals(event.custId)) return false;
         return eventType.equals(event.eventType);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + userId;
-        result = 31 * result + custId;
+        int result = id.hashCode();
+        result = 31 * result + userId.hashCode();
+        result = 31 * result + custId.hashCode();
         result = 31 * result + eventType.hashCode();
         return result;
     }
 
-    public int getId() {
+    public Integer getId() {
 
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public int getCustId() {
+    public Integer getCustId() {
         return custId;
     }
 
-    public void setCustId(int custId) {
+    public void setCustId(Integer custId) {
         this.custId = custId;
     }
 
@@ -71,7 +71,7 @@ public class Event {
         this.eventType = eventType;
     }
 
-    public Event(int id, int userId, int custId, String eventType) {
+    public Event(Integer id, Integer userId, Integer custId, String eventType) {
 
         this.id = id;
         this.userId = userId;
