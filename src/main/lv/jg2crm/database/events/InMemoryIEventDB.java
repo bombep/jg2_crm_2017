@@ -1,13 +1,12 @@
 package lv.jg2crm.database.events;
 
-import lv.jg2crm.database.events.EventDB;
 import lv.jg2crm.domain.Event;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class InMemoryEventDB implements EventDB {
+public class InMemoryIEventDB implements IEventDB {
     private List<Event> eventList = new ArrayList<>();
 
     @Override

@@ -18,7 +18,10 @@ public class Customer {
     private String company;
     private Integer phone;
     /* Не знаю какой тип данных должен быть у даты.
-    По идеи нужно для переменной creationdate, ставить системное время на момент создания клиента */
+    По идее, нужно для переменной creationdate, ставить системное время на момент создания клиента */
+
+
+
 
     public Customer(int id, String nickname, String realname, String company, int phone) {
         this.id = id;

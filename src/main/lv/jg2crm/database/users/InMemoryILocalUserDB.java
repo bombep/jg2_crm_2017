@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class InMemoryLocalUserDB implements LocalUserDB {
+public class InMemoryILocalUserDB implements ILocalUserDB {
     private List<LocalUser> localUserList = new ArrayList<>();
 
     @Override

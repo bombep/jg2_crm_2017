@@ -29,8 +29,11 @@ url             http://link
  */
 
 
-import lv.jg2crm.database.customers.CustomerDB;
-import lv.jg2crm.database.customers.InMemoryCustomerDB;
+import lv.jg2crm.businesslogic.AddCustomerService;
+import lv.jg2crm.businesslogic.IAddCustomerService;
+import lv.jg2crm.database.customers.ICustomerDB;
+import lv.jg2crm.database.customers.InMemoryICustomerDB;
+import lv.jg2crm.ui.AddCustomerView;
 import lv.jg2crm.ui.View;
 
 
@@ -49,19 +52,20 @@ public class CRMApplication {
         //3. Add event to customer
         //4. Exit
 
-        CustomerDB customerDB = new InMemoryCustomerDB();
+        ICustomerDB ICustomerDB = new InMemoryICustomerDB();
 
 
+        IAddCustomerService addCustomerService = new AddCustomerService(ICustomerDB);
         /*
-        AddProductService addProductService = new AddProductServiceImpl(productDAO);
         RemoveProductService removeProductService = new RemoveProductServiceImpl(productDAO);
         ProductListService productListService = new ProductListServiceImpl(productDAO);
 
-        Map<Integer, View> commands = new HashMap<>();
-        commands.put(1, new AddProductView(addProductService));
         commands.put(2, new RemoveProductView(removeProductService));
         commands.put(3, new PrintShoppingListView(productListService));
         */
+
+        Map<Integer, View> commands = new HashMap<>();
+        commands.put(1, new AddCustomerView(addCustomerService));
 
 
 
@@ -73,8 +77,8 @@ public class CRMApplication {
                 break;
             }
 
-           // View view = commands.get(menuItem);
-           // view.execute();
+            View view = commands.get(menuItem);
+            view.execute();
         }
 
 

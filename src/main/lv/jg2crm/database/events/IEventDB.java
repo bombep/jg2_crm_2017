@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public interface EventDB {
+public interface IEventDB {
 
     void add(Event event);
 

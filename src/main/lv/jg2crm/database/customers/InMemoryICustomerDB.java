@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class InMemoryCustomerDB implements CustomerDB {
+public class InMemoryICustomerDB implements ICustomerDB {
     private List<Customer> customerList = new ArrayList<>();
 
     @Override
@@ -24,6 +24,16 @@ public class InMemoryCustomerDB implements CustomerDB {
             customerList.remove(customer);
             return true;
         } else return false;
+    }
+
+
+
+
+    @Override
+    public List<Customer> getAll(){
+        List<Customer> theCopyOfCustomerList = new ArrayList<>();
+        theCopyOfCustomerList.addAll(customerList);
+        return theCopyOfCustomerList;
     }
 
 
