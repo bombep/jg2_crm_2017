@@ -1,4 +1,4 @@
-package lv.jg2crm.database.users;
+package lv.jg2crm.database.customers;
 
 import lv.jg2crm.domain.Customer;
 
@@ -17,7 +17,7 @@ public class InMemoryCustomerDB implements CustomerDB {
     @Override
     public boolean removeByUsername(String username) {
         Optional<Customer> foundUsername = customerList.stream()
-                .filter(customer -> customer.getUsername().equals(username))
+                .filter(customer -> customer.getNickname().equals(username))
                 .findFirst();
         if (foundUsername.isPresent()) {
             Customer customer = foundUsername.get();

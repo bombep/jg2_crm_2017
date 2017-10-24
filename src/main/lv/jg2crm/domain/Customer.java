@@ -2,19 +2,27 @@ package lv.jg2crm.domain;
 
 
 public class Customer {
-    Integer id;
-    String username;
-    String password;
-    String realname;
-    String company;
-    Integer phone;
+/*
+    id int NOT NULL AUTO_INCREMENT,
+    nickname varchar(50), realname varchar (100),
+    company varchar(50),
+    profession varchar(50),
+    address varchar(50),
+    phone varchar(50),
+    creationdatetime DATETIME,
+    lastupdatedatetime DATETIME,
+*/
+    private Integer id;
+    private String nickname;
+    private String realname;
+    private String company;
+    private Integer phone;
     /* Не знаю какой тип данных должен быть у даты.
     По идеи нужно для переменной creationdate, ставить системное время на момент создания клиента */
 
-    public Customer(int id, String username, String password, String realname, String company, int phone) {
+    public Customer(int id, String nickname, String realname, String company, int phone) {
         this.id = id;
-        this.username = username;
-        this.password = password;
+        this.nickname = nickname;
         this.realname = realname;
         this.company = company;
         this.phone = phone;
@@ -28,23 +36,15 @@ public class Customer {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getRealname() {
+     public String getRealname() {
         return realname;
     }
 
@@ -77,8 +77,7 @@ public class Customer {
 
         if (id != customer.id) return false;
         if (phone != customer.phone) return false;
-        if (username != null ? !username.equals(customer.username) : customer.username != null) return false;
-        if (password != null ? !password.equals(customer.password) : customer.password != null) return false;
+        if (nickname != null ? !nickname.equals(customer.nickname) : customer.nickname != null) return false;
         if (realname != null ? !realname.equals(customer.realname) : customer.realname != null) return false;
         return company != null ? company.equals(customer.company) : customer.company == null;
     }
@@ -86,8 +85,7 @@ public class Customer {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (username != null ? username.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (nickname != null ? nickname.hashCode() : 0);
         result = 31 * result + (realname != null ? realname.hashCode() : 0);
         result = 31 * result + (company != null ? company.hashCode() : 0);
         result = 31 * result + phone;
@@ -98,7 +96,7 @@ public class Customer {
     public String toString() {
         return "Customer{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
+                ", nickname='" + nickname + '\'' +
                 ", realname='" + realname + '\'' +
                 ", company='" + company + '\'' +
                 ", phone='" + phone + '\'' +

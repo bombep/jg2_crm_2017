@@ -58,17 +58,27 @@ url             http://link
  */
 
 
+import lv.jg2crm.database.customers.CustomerDB;
+import lv.jg2crm.database.customers.InMemoryCustomerDB;
+
 public class MainCRM {
 
     public static void main (String[] args){
+
+    //use cases:
+        //1. Add customer
+        //2. List customers
+        //3. Add event to customer
+        //4. Exit
+
+        CustomerDB customerDB = new InMemoryCustomerDB();
+
+
 
 
 
 
     }
-
-
-
 }
 
 /*

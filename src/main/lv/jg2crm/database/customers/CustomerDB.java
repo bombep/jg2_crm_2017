@@ -1,4 +1,4 @@
-package lv.jg2crm.database.users;
+package lv.jg2crm.database.customers;
 
 import lv.jg2crm.domain.Customer;
 

@@ -1,4 +1,4 @@
-package lv.jg2crm.database;
+package lv.jg2crm.database.events;
 
 import lv.jg2crm.domain.Event;
 
